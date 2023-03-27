@@ -19,6 +19,7 @@ import Button from "./Button"
 */
 const Expenses = (props) => {
     const expenses = props.expenses
+    const edit = props.edit
     
     /**
      * sets the input fileds charge and amount with values of the expense
@@ -42,10 +43,19 @@ const Expenses = (props) => {
      * @param (id: id of the expense whose delete button is clicked)
      */
     const handleDeleteClick = (id) => {
+        if(edit){
+            props.setAlert("Cannot delete expense when editing.")
+            setTimeout(() => {
+                props.setAlert(null)
+            }, 3000)
+            return
+        }
+
         const expense = expenses.find(expense => expense.id === id)
         const confirm = window.confirm(`Confirm delete expense ${expense.charge}`);
 
         if(id && confirm){
+            if(edit)
             props.setExpenses(props.expenses.filter(expense => expense.id !== id))
             props.setAlert('Expense Deleted.');
             setTimeout(() => {
