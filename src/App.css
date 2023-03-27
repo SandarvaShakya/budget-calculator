@@ -142,6 +142,7 @@ h2{
 
 .card--content{
     width: 60%;
+    word-wrap: break-word;
 }
 
 .card--title{
@@ -192,13 +193,13 @@ h2{
     padding: var(--padding-tbm) var(--padding-lrm);
     margin-top: 2rem;
     border-radius: var(--border-radius-mobile);
-    text-align: left;
 }
 
 .total--amt{
     font-size: var(--header-size);
     color: var(--white);
     margin-top: 1rem;
+    word-wrap: break-word;
 }
 
 .alert, .message{

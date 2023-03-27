@@ -47,7 +47,7 @@ const Expenses = (props) => {
 
         if(id && confirm){
             props.setExpenses(props.expenses.filter(expense => expense.id !== id))
-            props.setAlert('Expense Deleted');
+            props.setAlert('Expense Deleted.');
             setTimeout(() => {
                 props.setAlert(null)
             }, 3000)
@@ -61,7 +61,7 @@ const Expenses = (props) => {
         const confirm = window.confirm("Are you sure you want to clear all expenses?");
         if(confirm){
             props.setExpenses([]);
-            props.setAlert('All Expenses Cleared');
+            props.setAlert('All Expenses Cleared.');
             setTimeout(() => {
                 props.setAlert(null)
             }, 3000)
