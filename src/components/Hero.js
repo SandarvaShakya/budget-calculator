@@ -99,7 +99,7 @@ const Hero = (props) => {
       <div className="inputs">
         <Input 
           placeHolder="EG: Rent" 
-          title="Charge" 
+          title="Title"
           onChange={handleChargeChange}
           value={charge}
         />

@@ -31,7 +31,7 @@ const App = () => {
   return (
     <div className='wrapper'>
       <div className="container">
-        <h1>BUDGET CALCULATOR</h1>
+        <h1>Expense Tracker</h1>
         {alert ? <p className="alert">{alert}</p> : ''}
         {message ? <p className="message">{message}</p> : ''}
         <div className="content--container">

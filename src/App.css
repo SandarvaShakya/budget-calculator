@@ -201,7 +201,7 @@ h2{
     margin-top: 1rem;
 }
 
-.alert{
+.alert, .message{
     margin-top: 0.45em;
     border: 3px solid var(--red);
     border-radius: var(--border-radius-mobile);
@@ -213,14 +213,8 @@ h2{
 }
 
 .message{
-    margin-top: 0.45em;
     border: 3px solid var(--green);
-    border-radius: var(--border-radius-mobile);
-    padding: var(--padding-tbm) var(--padding-lrm);
     background-color: rgba(0, 232, 79, 0.5);
-    margin-top: 2em;
-    color: var(--dark-blue);
-    font-weight: 700;
 }
 
 @media (min-width: 900px){
@@ -255,5 +249,13 @@ h2{
 
     .total{
         width: 45%;
+    }
+
+    .alert,
+    .message{
+        width: 20%;
+        position: fixed;
+        top: 0;
+        right: 3%;
     }
 }
