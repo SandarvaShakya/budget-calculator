@@ -11,7 +11,7 @@ const Total = ({expenses}) => {
         <div className="total">
             <h2>Total Spendings</h2>
             <p className='total--amt'>
-                Rs. {expenses.reduce((sum, expense) => sum + parseInt(expense.amount), 0)}
+                Rs. {expenses.reduce((sum, expense) => sum + parseFloat(expense.amount), 0.0)}
             </p>
         </div>
     )

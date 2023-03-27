@@ -48,20 +48,39 @@ const Hero = (props) => {
   const add = (event) => {
     event.preventDefault();
     if(charge !== '' && amount !== ''){
+      if(amount < 0){
+        props.setAlert("Amount should be greater than zero.");
+          setTimeout(() => {
+            props.setAlert(null)
+          }, 3000)
+          props.setAmount("")
+          return
+      }
+
       if(edit){
+        //to check if amount is number
+        if(isNaN(amount)){
+          props.setAlert("Amount should be a valid number.");
+          setTimeout(() => {
+            props.setAlert(null)
+          }, 3000)
+          props.setAmount("")
+          return;
+        }
+
         const newExpenses = expenses.map(expense => expense.id !== id ? expense : {...expense, charge, amount})
         props.setExpenses(newExpenses)
         props.setCharge('')
         props.setAmount('')
         props.setEdit(false)
-        props.setMessage('Expense Successfully Edited.')
+        props.setMessage('Expense successfully edited.')
         setTimeout(() => {
           props.setMessage(null)
         }, 3000)
       }else{
         //to check if amount is number
         if(isNaN(amount)){
-          props.setAlert("Amount should be a valid number");
+          props.setAlert("Amount should be a valid number.");
           setTimeout(() => {
             props.setAlert(null)
           }, 3000)
@@ -81,13 +100,13 @@ const Hero = (props) => {
         })
         props.setCharge('');
         props.setAmount('');
-        props.setMessage('Expense Added')
+        props.setMessage('Expense added.')
         setTimeout(() => {
           props.setMessage(null)
         }, 3000)
       }
     }else{
-      props.setAlert('Both charge and amount should be entered!')
+      props.setAlert('Both title and amount should be entered!')
         setTimeout(() => {
           props.setAlert(null)
         }, 3000)
