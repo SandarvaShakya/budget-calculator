@@ -40,11 +40,7 @@ const Hero = (props) => {
   const handleAmountChange = (event) => {
     props.setAmount(event.target.value);
   }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  }
-
+  
   /**
     * adds expense to the list
     * if edit is true then edits the expense already recorded
