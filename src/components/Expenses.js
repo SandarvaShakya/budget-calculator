@@ -43,24 +43,20 @@ const Expenses = (props) => {
      * @param (id: id of the expense whose delete button is clicked)
      */
     const handleDeleteClick = (id) => {
-        if(edit){
-            props.setAlert("Cannot delete expense when editing.")
-            setTimeout(() => {
-                props.setAlert(null)
-            }, 3000)
-            return
-        }
-
         const expense = expenses.find(expense => expense.id === id)
         const confirm = window.confirm(`Confirm delete expense ${expense.charge}`);
 
         if(id && confirm){
-            if(edit)
             props.setExpenses(props.expenses.filter(expense => expense.id !== id))
             props.setAlert('Expense Deleted.');
             setTimeout(() => {
                 props.setAlert(null)
             }, 3000)
+            if(edit){
+                props.setCharge('')
+                props.setAmount('')
+                props.setEdit(false)
+            }
         }
     }
 
@@ -75,6 +71,11 @@ const Expenses = (props) => {
             setTimeout(() => {
                 props.setAlert(null)
             }, 3000)
+            if(edit){
+                props.setCharge('')
+                props.setAmount('')
+                props.setEdit(false)
+            }
         }
     }
 
