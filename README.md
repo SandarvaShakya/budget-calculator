@@ -22,5 +22,6 @@ Run the server :rocket:
 npm start
 ```
 
-Deployment
+## Deployment
+
 This app is hosted using [vercel](https://vercel.com/). :stars:
