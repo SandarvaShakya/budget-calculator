@@ -23,6 +23,10 @@ const App = () => {
   const [alert, setAlert] = useState('');
   // success message
   const [message, setMessage] = useState('');
+  // charge error
+  const [chargeErr, setChargeErr] = useState('');
+  //amount error
+  const [amountErr, setAmountErr] = useState('');
 
   useEffect(() => {
     localStorage.setItem("expenses", JSON.stringify(expenses))
@@ -47,6 +51,10 @@ const App = () => {
             id={id}
             setAlert={setAlert}
             setMessage={setMessage}
+            chargeErr={chargeErr}
+            setChargeErr={setChargeErr}
+            amountErr={amountErr}
+            setAmountErr={setAmountErr}
           />
           <Expenses
             expenses = {expenses}

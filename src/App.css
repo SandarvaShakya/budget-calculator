@@ -44,7 +44,6 @@ h1{
     letter-spacing: 0.05em;
     font-weight: 700;
     color: var(--primary-blue);
-    /* text-shadow: 0px -3px 0px var(--dark-blue); */
 
     text-align: center;
 }
@@ -68,6 +67,7 @@ h2{
     background-color: var(--green);
     width: 70%;
     margin: 0 auto;
+    margin-top: 1.25rem;
 }
 
 .btn--green:hover{
@@ -85,7 +85,7 @@ h2{
     box-shadow: 5px 5px 25px var(--dark-blue) ;
 }
 
-.plus{
+.plus, .fa-trash{
     width: 1.09em;
     margin-left: 1em;
     color: black;
@@ -119,6 +119,17 @@ h2{
 .label{
     color: white;
     margin-bottom: 0.93em;
+}
+
+.input--hero{
+    position: relative;
+}
+
+.alert--hero{
+    position: absolute;
+    color: var(--red);
+    bottom: -25px;
+    left: 0;
 }
 
 .expenses{

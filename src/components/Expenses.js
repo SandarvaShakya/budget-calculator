@@ -86,7 +86,7 @@ const Expenses = (props) => {
             {expenses.length > 0 
                 ? <Button 
                     text="CLEAR EXPENSES"
-                    className="fa-solid fa-plus plus icon--white"
+                    className="fa-sharp fa-solid fa-trash icon--white"
                     class="btn btn--red"
                     onClick={clearAll}
                   />
